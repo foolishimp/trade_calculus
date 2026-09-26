@@ -1,0 +1,27 @@
+{
+  "name": "trade-calculus",
+  "version": "0.1.0-dev.0",
+  "private": true,
+  "type": "module",
+  "description": "Typed trading-system analysis with explicit ontology, evidence, valuation and risk",
+  "engines": {
+    "node": ">=24.3.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "demo": "node examples/oil_basis.ts",
+    "dev": "node server.ts",
+    "replay": "node examples/historical_replay.ts",
+    "strategy": "node examples/recursive_strategy.ts",
+    "data:refresh": "node scripts/import_history.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "marked": "18.0.14"
+  }
+}

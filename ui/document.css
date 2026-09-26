@@ -1,0 +1,109 @@
+:root {
+  color-scheme: light;
+  --ink: #203932;
+  --muted: #657870;
+  --green: #216b57;
+  --line: #dde5df;
+  --paper: #ffffff;
+  --background: #f4f6f2;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; color: var(--ink); background: var(--background); font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a:hover { color: #103d30; }
+a:focus-visible, summary:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid #77b49b; outline-offset: 5px; }
+.skip-link { position: fixed; top: -100px; left: 20px; padding: 10px 20px; background: white; z-index: 5; }
+.skip-link:focus { top: 10px; }
+.reader-bar { position: sticky; top: 0; z-index: 2; height: 76px; padding: 0 max(28px, calc((100vw - 1264px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 20px; background: #f4f6f2f5; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.reader-brand { display: flex; align-items: center; gap: 12px; color: var(--ink); font-size: 15px; font-weight: 650; text-decoration: none; letter-spacing: -.25px; }
+.reader-brand span { width: 34px; height: 38px; display: grid; place-items: center; border-radius: 7px; color: #305f47; background: #e0ecd9; font: 29px Georgia, serif; }
+.return-link { font-size: 13px; text-decoration: none; }
+.reader-layout { display: grid; grid-template-columns: 215px minmax(0, 1fr); align-items: start; gap: 40px; max-width: 1320px; margin: 0 auto; padding: 44px 28px 36px; }
+.reader-sidebar { position: sticky; top: 112px; max-height: calc(100vh - 136px); overflow-y: auto; padding: 12px 12px 16px 0; }
+.collection-link { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 30px; padding-bottom: 17px; border-bottom: 1px solid var(--line); font-size: 12px; font-weight: 600; text-decoration: none; }
+.collection-link span { font-size: 15px; color: #879a8e; }
+.contents summary { cursor: pointer; color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: 1.5px; text-transform: uppercase; }
+.contents ol { list-style: none; margin: 15px 0 24px; padding: 0; }
+.contents li { margin: 3px 0; }
+.contents a { display: block; padding: 7px 10px; margin-left: -10px; border-radius: 4px; font-size: 12px; line-height: 1.6; color: #546b5f; text-decoration: none; }
+.contents a:hover, .contents a:focus-visible { background: #e8eee7; color: #1e5d46; }
+.contents .toc-level-3 { padding-left: 13px; }
+.contents .toc-level-3 a { font-size: 11px; }
+.source-link { font-size: 11px; color: var(--muted); text-decoration: none; }
+main { min-width: 0; }
+main:focus { outline: none; }
+.document { padding: 48px 54px 54px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 3px 15px #2f513504; overflow-wrap: anywhere; }
+.document-heading { margin: 0 0 30px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.document-heading .eyebrow { margin: 0 0 17px; color: var(--green); font-size: 10px; font-weight: 650; letter-spacing: 1.7px; text-transform: uppercase; }
+.document h1 { max-width: 760px; margin: 0 0 22px; font: 44px/1.15 Georgia, "Times New Roman", serif; letter-spacing: -1.1px; color: #203e30; }
+.document-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; color: var(--muted); font-size: 11px; }
+.poc-label { border: 1px solid #dce6d7; background: #f1f5ed; border-radius: 4px; padding: 3px 9px; color: #5e7355; }
+.document p { margin: 0 0 20px; }
+.document-heading + p { color: #466050; font-size: 17px; line-height: 1.85; }
+.document h2 { margin: 44px 0 19px; padding-top: 25px; border-top: 1px solid #e8ede7; font-size: 22px; font-weight: 600; letter-spacing: -.4px; line-height: 1.4; }
+.document-heading + h2 { border-top: 0; padding-top: 0; margin-top: 30px; }
+.document h3 { margin: 32px 0 14px; font-size: 18px; font-weight: 600; line-height: 1.45; }
+.document h4, .document h5, .document h6 { margin: 24px 0 12px; font-size: 16px; }
+.document :is(h1, h2, h3, h4, h5, h6):target { color: var(--green); }
+.document ul, .document ol { padding-left: 24px; margin: 18px 0 24px; }
+.document li { padding-left: 4px; margin: 10px 0; }
+.document li::marker { color: #718b75; }
+.document li p { margin: 8px 0; }
+.document strong { font-weight: 650; }
+.document code, .document-footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.document :not(pre) > code { font-size: .85em; background: #f0f4ee; border: 1px solid #e4ebe0; border-radius: 4px; padding: 2px 5px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.document pre { max-width: 100%; overflow-x: auto; background: #f3f6f1; border: 1px solid #dce5d7; border-left: 3px solid #8bab80; border-radius: 4px; padding: 20px 23px; margin: 24px 0; font-size: 13px; line-height: 1.8; tab-size: 2; }
+.document blockquote { margin: 24px 0; padding: 16px 22px; border-left: 3px solid #8bab80; background: #f4f7f0; color: #496447; }
+.document blockquote p:last-child { margin-bottom: 0; }
+.document hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+.document-table { max-width: 100%; overflow-x: auto; margin: 25px 0; border: 1px solid var(--line); border-radius: 6px; }
+.document table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.65; }
+.document th { text-align: left; padding: 13px 16px; color: #4c6852; background: #edf3e9; font-size: 11px; font-weight: 650; }
+.document td { padding: 15px 16px; vertical-align: top; border-top: 1px solid #e6ece2; min-width: 110px; }
+.document tbody tr:nth-child(even) { background: #fafcf8; }
+.document td:first-child { min-width: 142px; color: #325842; font-weight: 500; }
+.document-table :not(pre) > code { background: transparent; border: 0; padding: 0; }
+.workspace-reference { color: #536658; }
+.workspace-reference small { display: inline-block; margin-left: 5px; color: #7a877d; font-size: 10px; font-style: italic; }
+.document-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 23px; font-size: 10px; color: var(--muted); }
+.document-footer span { overflow-wrap: anywhere; }
+.document-footer code { font-size: 10px; padding-left: 5px; }
+.document-footer a { text-decoration: none; white-space: nowrap; }
+@media (max-width: 1000px) {
+  .reader-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 30px 22px; }
+  .document { padding: 34px 30px; }
+  .document h1 { font-size: 36px; }
+}
+@media (max-width: 740px) {
+  html { scroll-padding-top: 84px; }
+  .reader-bar { height: 64px; padding: 0 20px; }
+  .reader-brand { font-size: 13px; gap: 8px; }
+  .return-link { font-size: 11px; }
+  .reader-layout { display: block; padding: 20px 16px; }
+  .reader-sidebar { position: static; max-height: none; padding: 0 6px 23px; }
+  .collection-link { margin-bottom: 15px; padding-bottom: 13px; }
+  .contents ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; margin-bottom: 16px; }
+  .contents a { font-size: 11px; }
+  .source-link { display: block; padding-top: 3px; }
+  .document { padding: 30px 22px; font-size: 15px; }
+  .document h1 { font-size: 34px; letter-spacing: -.8px; }
+  .document h2 { font-size: 21px; }
+  .document-heading + p { font-size: 16px; }
+  .document table { min-width: 560px; }
+  .document-footer { padding: 0 5px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .reader-bar, .reader-sidebar, .skip-link, .document-footer a { display: none; }
+  .reader-layout { display: block; max-width: none; padding: 0; }
+  .document { border: 0; box-shadow: none; padding: 0; }
+  .document h1 { font-size: 28pt; }
+  .document :is(h1, h2, h3, h4) { break-after: avoid; }
+  .document pre { white-space: pre-wrap; break-inside: avoid; }
+  .document-table { overflow: visible; }
+  .document table { min-width: 0; font-size: 9pt; }
+  .document tr { break-inside: avoid; }
+  a { color: inherit; }
+}
